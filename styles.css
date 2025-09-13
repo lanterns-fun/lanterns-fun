@@ -729,30 +729,67 @@ footer p {
     background-color: var(--white);
 }
 
-.waitlist-form-centered {
+.waitlist-cta-centered {
     max-width: 600px;
     margin: 0 auto;
 }
 
-.waitlist-form {
+.waitlist-cta {
     background: var(--light-grey);
-    padding: 50px 40px;
+    padding: 60px 40px;
     border-radius: 16px;
     border: 1px solid var(--border-light);
+    text-align: center;
 }
 
-.waitlist-form h2 {
-    font-size: 2rem;
+.waitlist-cta h2 {
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--text-dark);
-    margin-bottom: 10px;
-    text-align: center;
+    margin-bottom: 15px;
 }
 
-.waitlist-form > p {
+.waitlist-cta > p {
+    font-size: 1.125rem;
     color: var(--text-light);
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 40px;
+}
+
+.waitlist-info {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.waitlist-info p {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.info-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.info-list li {
+    color: var(--text-light);
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.5;
+}
+
+.info-list li:before {
+    content: "✓";
+    color: var(--primary-orange);
+    font-weight: 600;
+    position: absolute;
+    left: 0;
+    top: 8px;
 }
 
 .checkbox-group {
@@ -921,7 +958,7 @@ footer p {
     }
 
 
-    .waitlist-form {
+    .waitlist-cta {
         padding: 40px 30px;
     }
 
