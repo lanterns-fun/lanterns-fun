@@ -51,48 +51,31 @@
 
         <section class="waitlist-signup">
             <div class="container">
-                <div class="waitlist-form-centered">
-                    <form class="waitlist-form" id="waitlistForm">
+                <div class="waitlist-cta-centered">
+                    <div class="waitlist-cta">
                         <h2>Join the Waitlist</h2>
                         <p>Be notified when we launch and get exclusive early access</p>
 
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                        <div class="waitlist-info">
+                            <p>We'll collect:</p>
+                            <ul class="info-list">
+                                <li>Your name and email address</li>
+                                <li>Company information (optional)</li>
+                                <li>Newsletter preferences</li>
+                            </ul>
                         </div>
 
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="company">Company (Optional)</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="newsletter" value="yes">
-                                <span class="checkmark"></span>
-                                I'd like to receive updates and blog posts about product development
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn primary waitlist-btn">
-                            <span class="btn-text">Join Waitlist</span>
-                            <span class="btn-loading" style="display: none;">Joining...</span>
-                        </button>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVPp_6CypzSUsdMzIQwskvKbyOV7PBT5Hncvir9NEVNb-0Lw/viewform"
+                           class="btn primary waitlist-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Join Waitlist
+                        </a>
 
                         <p class="privacy-note">
                             By joining our waitlist, you agree to our privacy policy. We'll only use your email to notify you about product updates and launch information.
                         </p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -129,31 +112,6 @@
     </footer>
 
     <script>
-        // Waitlist form handling
-        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const btnText = this.querySelector('.btn-text');
-            const btnLoading = this.querySelector('.btn-loading');
-            const submitBtn = this.querySelector('.waitlist-btn');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline';
-            submitBtn.disabled = true;
-
-            // Simulate API call
-            setTimeout(() => {
-                alert('🎉 Welcome to the waitlist! You\'ll receive a confirmation email shortly.');
-                this.reset();
-
-                // Reset button state
-                btnText.style.display = 'inline';
-                btnLoading.style.display = 'none';
-                submitBtn.disabled = false;
-            }, 2000);
-        });
-
         // Smooth scrolling for any anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
