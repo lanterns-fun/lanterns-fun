@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Waitlist - Lanterns.fun</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🏮 lanterns.fun</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="waitlist.html" class="active">Waitlist</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="waitlist-hero">
+            <div class="container">
+                <div class="waitlist-content">
+                    <h1>Be First to Experience the Future</h1>
+                    <p class="waitlist-lead">Join our exclusive waitlist and be among the first to access our revolutionary products when they launch.</p>
+
+                    <div class="waitlist-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">🚀</div>
+                            <h3>Early Access</h3>
+                            <p>Get priority access to new features and products before general release</p>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">💎</div>
+                            <h3>Exclusive Perks</h3>
+                            <p>Receive special discounts and premium features as an early supporter</p>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">👥</div>
+                            <h3>Community Access</h3>
+                            <p>Join our private community of early adopters and industry innovators</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="waitlist-signup">
+            <div class="container">
+                <div class="waitlist-form-centered">
+                    <form class="waitlist-form" id="waitlistForm">
+                        <h2>Join the Waitlist</h2>
+                        <p>Be notified when we launch and get exclusive early access</p>
+
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" value="yes">
+                                <span class="checkmark"></span>
+                                I'd like to receive updates and blog posts about product development
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn primary waitlist-btn">
+                            <span class="btn-text">Join Waitlist</span>
+                            <span class="btn-loading" style="display: none;">Joining...</span>
+                        </button>
+
+                        <p class="privacy-note">
+                            By joining our waitlist, you agree to our privacy policy. We'll only use your email to notify you about product updates and launch information.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="waitlist-faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>When will the products launch?</h4>
+                        <p>We're targeting Q2 2025 for our initial release. Waitlist members will be notified 2 weeks before public launch.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What's included in early access?</h4>
+                        <p>Early access includes full product access, priority support, exclusive community membership, and a 50% discount on your first year.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can I leave the waitlist anytime?</h4>
+                        <p>Absolutely! You can unsubscribe from our waitlist at any time using the link in our emails.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Will there be a free tier?</h4>
+                        <p>Yes! We'll offer a generous free tier for individual developers and small teams, with premium features for larger organizations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lanterns.fun. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Waitlist form handling
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btnText = this.querySelector('.btn-text');
+            const btnLoading = this.querySelector('.btn-loading');
+            const submitBtn = this.querySelector('.waitlist-btn');
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                alert('🎉 Welcome to the waitlist! You\'ll receive a confirmation email shortly.');
+                this.reset();
+
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

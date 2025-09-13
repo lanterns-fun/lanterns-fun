@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Lanterns.fun</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🏮 lanterns.fun</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="docs.html" class="active">Documentation</a></li>
+                <li><a href="waitlist.html">Waitlist</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="docs-container">
+            <aside class="docs-sidebar">
+                <nav class="docs-nav">
+                    <h3>Documentation</h3>
+                    <ul>
+                        <li><a href="#getting-started" class="active">Getting Started</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#configuration">Configuration</a></li>
+                        <li><a href="#api-reference">API Reference</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="docs-content">
+                <section id="getting-started">
+                    <h2>Getting Started</h2>
+                    <p>Welcome to the Lanterns.fun documentation! This guide will help you get up and running quickly with our platform.</p>
+
+                    <h3>Quick Start</h3>
+                    <p>Follow these simple steps to begin your journey:</p>
+                    <ol>
+                        <li>Create your account on our platform</li>
+                        <li>Complete the initial setup process</li>
+                        <li>Explore our features and tools</li>
+                        <li>Join our community for support and collaboration</li>
+                    </ol>
+                </section>
+
+                <section id="installation">
+                    <h2>Installation</h2>
+                    <p>Installing Lanterns.fun is straightforward. Choose your preferred method:</p>
+
+                    <h3>Using npm</h3>
+                    <pre><code>npm install @lanterns/fun</code></pre>
+
+                    <h3>Using yarn</h3>
+                    <pre><code>yarn add @lanterns/fun</code></pre>
+
+                    <h3>CDN</h3>
+                    <pre><code>&lt;script src="https://cdn.lanterns.fun/latest/lanterns.js"&gt;&lt;/script&gt;</code></pre>
+                </section>
+
+                <section id="configuration">
+                    <h2>Configuration</h2>
+                    <p>Configure Lanterns.fun to match your project requirements:</p>
+
+                    <pre><code>const lanterns = require('@lanterns/fun');
+
+lanterns.configure({
+  theme: 'bright',
+  animation: true,
+  debug: false
+});</code></pre>
+                </section>
+
+                <section id="api-reference">
+                    <h2>API Reference</h2>
+                    <p>Complete reference for all available methods and options:</p>
+
+                    <h3>Core Methods</h3>
+                    <ul>
+                        <li><code>lanterns.light()</code> - Initialize lighting effects</li>
+                        <li><code>lanterns.dim()</code> - Reduce brightness</li>
+                        <li><code>lanterns.extinguish()</code> - Turn off all effects</li>
+                    </ul>
+                </section>
+
+                <section id="examples">
+                    <h2>Examples</h2>
+                    <p>Practical examples to help you implement common use cases:</p>
+
+                    <h3>Basic Usage</h3>
+                    <pre><code>import { Lantern } from '@lanterns/fun';
+
+const myLantern = new Lantern({
+  color: 'warm',
+  intensity: 0.8
+});
+
+myLantern.light();</code></pre>
+                </section>
+
+                <section id="troubleshooting">
+                    <h2>Troubleshooting</h2>
+                    <p>Common issues and their solutions:</p>
+
+                    <h3>Installation Issues</h3>
+                    <p>If you encounter problems during installation, try clearing your package cache:</p>
+                    <pre><code>npm cache clean --force</code></pre>
+                </section>
+
+                <section id="faq">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <h3>Is Lanterns.fun free to use?</h3>
+                    <p>Yes, our core features are completely free. Premium features are available for advanced users.</p>
+
+                    <h3>How do I get support?</h3>
+                    <p>Join our community forum or reach out through our contact page for assistance.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lanterns.fun. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.docs-nav a');
+            const sections = document.querySelectorAll('.docs-content section');
+
+            function highlightNav() {
+                const scrollPos = window.scrollY + 100;
+
+                sections.forEach((section, index) => {
+                    const top = section.offsetTop;
+                    const bottom = top + section.offsetHeight;
+
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        links.forEach(link => link.classList.remove('active'));
+                        if (links[index]) {
+                            links[index].classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNav);
+        });
+    </script>
+</body>
+</html>
